@@ -46,9 +46,7 @@ class Graph {
          */
         friend std::pair<edge_descriptor, bool> add_edge (vertex_descriptor, vertex_descriptor, Graph&) {
             // <your code>
-            edge_descriptor ed = 0;
-            bool            b  = false;
-            return std::make_pair(ed, b);}
+        }
 
         // ----------
         // add_vertex
@@ -59,8 +57,7 @@ class Graph {
          */
         friend vertex_descriptor add_vertex (Graph&) {
             // <your code>
-            vertex_descriptor v = 0; // fix
-            return v;}
+        }
 
         // -----------------
         // adjacent_vertices
