@@ -1,12 +1,12 @@
 FILES :=                              \
     .travis.yml                       \
-    ../deque-tests/tbc399-TestDeque.c++ \
-    ../deque-tests/tbc399-TestDeque.out \
-    Deque.h                       \
-    Deque.log                       \
+    ../graph-tests/tbc399-TestGraph.c++ \
+    ../graph-tests/tbc399-TestGraph.out \
+    Graph.h                       \
+    Graph.log                       \
     html                              \
-    TestDeque.c++                   \
-    TestDeque.out					\
+    TestGraph.c++                   \
+    TestGraph.out					\
 	makefile
 
 ifeq ($(CXX), clang++)
@@ -22,7 +22,7 @@ CXXFLAGS := -pedantic -std=c++11 -Wall
 LDFLAGS  := -lgtest -lgtest_main -pthread
 VALGRIND := valgrind
 
-all: TestDeque
+all: TestGraph
 
 check:
 	@for i in $(FILES);                                         \
@@ -34,36 +34,34 @@ clean:
 	rm -f *.gcda
 	rm -f *.gcno
 	rm -f *.gcov
-	rm -f RunDeque
-	rm -f RunDeque.out
-	rm -f TestDeque
-	rm -f TestDeque.out
+	rm -f TestGraph
+	rm -f TestGraph.out
 
 config:
 	git config -l
 
-test: TestDeque.out
+test: TestGraph.out
 
-simple-test: TestDeque
-	./TestDeque
+simple-test: TestGraph
+	./TestGraph
 
-deque-tests:
-	git clone https://github.com/cs378-summer-2015/deque-tests.git
+graph-tests:
+	git clone https://github.com/cs378-summer-2015/graph-tests.git
 
-html: Doxyfile Deque.h RunDeque.c++ TestDeque.c++
+html: Doxyfile Graph.h TestGraph.c++
 	doxygen Doxyfile
 
-Deque.log:
-	git log > Deque.log
+Graph.log:
+	git log > Graph.log
 
 Doxyfile:
 	doxygen -g
 
-TestDeque: Deque.h TestDeque.c++
-	$(CXX) $(COVFLAGS) $(CXXFLAGS) TestDeque.c++ -o TestDeque $(LDFLAGS)
+TestGraph: Graph.h TestGraph.c++
+	$(CXX) $(COVFLAGS) $(CXXFLAGS) TestGraph.c++ -o TestGraph $(LDFLAGS)
 
-TestDeque.out: TestDeque
-	$(VALGRIND) ./TestDeque  >  TestDeque.out 2>&1
-	$(GCOV) -b Deque.h     >> TestDeque.out
-	$(GCOV) -b TestDeque.c++ >> TestDeque.out
-	cat TestDeque.out
+TestGraph.out: TestGraph
+	$(VALGRIND) ./TestGraph  >  TestGraph.out 2>&1
+	$(GCOV) -b Graph.h     >> TestGraph.out
+	$(GCOV) -b TestGraph.c++ >> TestGraph.out
+	cat TestGraph.out
