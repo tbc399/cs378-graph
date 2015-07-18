@@ -67,14 +67,12 @@ class Graph {
                 e.insert(make_pair(temp, make_pair(u, v)));
                 
                 return make_pair(temp, true);
-            }
-            else{
+            } else{
 
                 //how to get the edgedescriptor index
                 return make_pair(, false);                          //the first needs to be the edgedescriptor index
             }
 
-            return make_pair(, p.second);
         }
 
         // ----------
@@ -82,10 +80,13 @@ class Graph {
         // ----------
 
         /**
-         * <your documentation>
+         * Add a new single vertex to this Graph
+         * @param g the Graph to add the vertex to
+         * @return a vertex_descriptor for the new vertex
          */
-        friend vertex_descriptor add_vertex (Graph&) {
-            // <your code>
+        friend vertex_descriptor add_vertex (Graph& g) {
+            g.v.resize(g.v.size() + 1);
+            return g.v.size();
         }
 
         // -----------------
