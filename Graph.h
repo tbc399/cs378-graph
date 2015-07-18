@@ -26,12 +26,12 @@ class Graph {
         // typedefs
         // --------
 
-        typedef int vertex_descriptor;  // fix!
-        typedef int edge_descriptor;    // fix!
+        typedef unsigned int vertex_descriptor;  // fix!
+        typedef unsigned int edge_descriptor;    // fix!
 
-        typedef int* vertex_iterator;    // fix!
+        typedef unsigned int vertex_iterator;    // fix!
         typedef int* edge_iterator;      // fix!
-        typedef int* adjacency_iterator; // fix!
+        typedef unsigned int* adjacency_iterator; // fix!
 
         typedef std::size_t vertices_size_type;
         typedef std::size_t edges_size_type;
@@ -44,8 +44,18 @@ class Graph {
         /**
          * <your documentation>
          */
-        friend std::pair<edge_descriptor, bool> add_edge (vertex_descriptor, vertex_descriptor, Graph&) {
+        friend std::pair<edge_descriptor, bool> add_edge (vertex_descriptor u, 
+        												  vertex_descriptor v, 
+        												  Graph& g) {
             // <your code>
+            
+            pair<map::iterator, bool> p = e.insert(make_pair(++Graph::num_edges, make_pair(u, v)));
+            if (!p.second)
+            	--Graph::num_edges;
+            
+            vertex_size_type n = max(u, v) + 1;
+            if (n > g.x.size())
+            	g.x.resize(n);
         }
 
         // ----------
@@ -179,8 +189,12 @@ class Graph {
         // data
         // ----
 
-        std::vector< std::vector<vertex_descriptor> > g; // something like this
+        std::vector< std::vector<vertex_descriptor> > v; // something like this
 
+		std::map<std::pair<vertex_descriptor, vertex_descriptor>> e;
+		
+		static unsigned int num_edges; 
+		
         // -----
         // valid
         // -----
@@ -198,16 +212,19 @@ class Graph {
         // ------------
 
         /**
-         * <your documentation>
+         * Construct an empty adjacency list graph
          */
         Graph () {
             // <your code>
-            assert(valid());}
+            assert(valid());
+       	}
 
         // Default copy, destructor, and copy assignment
         // Graph  (const Graph<T>&);
         // ~Graph ();
         // Graph& operator = (const Graph&);
-    };
+};
+
+unsigned int Graph::num_edges = 0;
 
 #endif // Graph_h
