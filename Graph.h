@@ -48,31 +48,21 @@ class Graph {
         												  vertex_descriptor v, 
         												  Graph& g) {
             // <your code>
-            
-            /*
-            pair<map::iterator, bool> p = e.insert(make_pair(++Graph::num_edges, make_pair(u, v)));
-            if (!p.second)
-            	--Graph::num_edges;
-            */
-
             vertex_size_type n = max(u, v) + 1;
             if (n > g.x.size())
             	g.x.resize(n);
 
-            pair<set::iterator, bool> p = v[u].insert(v);                             //go tot he index u, insert the vertex v there
+            pair<set::iterator, bool> p = v[u].insert(v); //go tot he index u, insert the vertex v there
 
-            if(p.second == true){
+            if(p.second){
                 edge_descriptor temp = num_edges++;
-
-                e.insert(make_pair(temp, make_pair(u, v)));
-                
+                e1.insert(make_pair(temp, make_pair(u, v)));
+                e2.insert(make_pair(make_pair(u, v), temp));
                 return make_pair(temp, true);
-            } else{
-
-                //how to get the edgedescriptor index
-                return make_pair(, false);                          //the first needs to be the edgedescriptor index
+            } else {
+                return e2.at(make_pair(u, v));
             }
-
+            
         }
 
         // ----------
@@ -211,8 +201,10 @@ class Graph {
 
         std::vector< std::set<vertex_descriptor> > v; // something like this
 
-		std::map<edge_descriptor, std::pair<vertex_descriptor, vertex_descriptor>> e;  //key is the edge desciptor, the value is a pair of verticies
+		std::map<edge_descriptor, std::pair<vertex_descriptor, vertex_descriptor>> e1;  //key is the edge desciptor, the value is a pair of verticies
 		
+        std::map<std::pair<vertex_descriptor, vertex_descriptor>, edge_descriptor> e2;
+        
 		static unsigned int num_edges; 
 		
         // -----
