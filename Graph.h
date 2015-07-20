@@ -26,11 +26,11 @@ class Graph {
         // typedefs
         // --------
 
-        typedef unsigned int vertex_descriptor;  // fix!
-        typedef unsigned int edge_descriptor;    // fix!
+        typedef unsigned int vertex_descriptor;  // fix! done
+        typedef unsigned int edge_descriptor;    // fix! done
 
-        typedef unsigned int vertex_iterator;    // fix!
-        typedef int* edge_iterator;      // fix!
+        typedef std::vector<vertex_descriptor>::iterator vertex_iterator;    // fix! done
+        typedef std::vector<edge_descriptor>::iterator edge_iterator;      // fix! done
         typedef std::set<vertex_descriptor>::iterator adjacency_iterator;
 
         typedef std::size_t vertices_size_type;
@@ -51,8 +51,10 @@ class Graph {
 			//Do we need to check if they try and add a edge where u == v?
             // <your code>
             vertex_size_type n = max(u, v) + 1;
-            if (n > g.x.size())
-            	g.x.resize(n);
+            if (n > g.x.size()){
+		g.vd.resize(n);
+            	g.v.resize(n);
+	    }
 
             pair<set::iterator, bool> p = v[u].insert(v); //go tot he index u, insert the vertex v there
 
@@ -60,6 +62,7 @@ class Graph {
                 edge_descriptor temp = num_edges++;
                 e1.insert(make_pair(temp, make_pair(u, v)));
                 e2.insert(make_pair(make_pair(u, v), temp));
+		ed.push_back(temp);
                 return make_pair(temp, true);
             } else {
                 return e2.at(make_pair(u, v));
@@ -82,8 +85,9 @@ class Graph {
 			// g.v.size() - 1? since the index starts at 0. 
 			// for example v has 10 vertices, 0-9. adding one makes it 11, 0-10, we should reutrn the vertex descriptopr 10?
 
-
+		
             g.v.resize(g.v.size() + 1);
+ 	    g.vd.resize(g.vd.size() + 1);
             return g.v.size() - 1;
         }
 
@@ -104,28 +108,30 @@ class Graph {
         // ----
 
         /**
-         * <your documentation>
+         * Searches for an edge within our map and returns a pair with that edge descriptor and a bool, returns 0,false if not there
          */
         friend std::pair<edge_descriptor, bool> edge (vertex_descriptor u,
                                             vertex_descriptor v, const Graph& g) {
-            // <your code>
-            edge_descriptor ed = 0;
-            bool            b  = true;
-            return std::make_pair(ed, b);}
+         
+		try{
+			return std::make_pair(e2.at(std::make_pair(u , v), true));
+		}
+		catch(std::out_of_range& e){
+			return std::make_pair(0, false);
+		}
+
+            return std::make_pair(0, false);}
 
         // -----
         // edges
         // -----
 
         /**
-         * <your documentation>
+         * returns a pair of iterators (beginning and end) of our edges tracker ed
          */
         friend std::pair<edge_iterator, edge_iterator> edges (const Graph&) {
-            // <your code>
-            static int a [] = {0, 0};     // dummy data
-            edge_iterator b = a;
-            edge_iterator e = a + 2;
-            return std::make_pair(b, e);}
+
+	    return std::make_pair(g.ed.begin(), g.ed.end());}		
 
         // ---------
         // num_edges
@@ -137,9 +143,6 @@ class Graph {
         //friend edges_size_type num_edges (const Graph&) {
         friend edges_size_type num_edges (const Graph&) {
 
-			//does this return int? should we change edges_size_type to int?
-            //edges_size_type s = 1; // fix
-
             return num_edges;}
 
         // ------------
@@ -147,23 +150,28 @@ class Graph {
         // ------------
 
         /**
-         * <your documentation>
+         * returns the number of vertices
          */
         friend vertices_size_type num_vertices (const Graph&) {
-            // <your code>
-            vertices_size_type s = 1; // fix
-            return s;}
+            
+	    return g.vd.size();}
 
         // ------
         // source
         // ------
 
         /**
-         * <your documentation>
+         * returns the source of where the edge starts
          */
         friend vertex_descriptor source (edge_descriptor, const Graph&) {
-            // <your code>
-            vertex_descriptor v = 0; // fix
+
+	    try{
+		return e1.at(edge_descriptor).first;	
+	    }
+	    catch(std::out_of_range& e){
+		return 0;
+	    }
+
             return v;}
 
         // ------
@@ -171,7 +179,7 @@ class Graph {
         // ------
 
         /**
-         * <your documentation>
+         *  
          */
         friend vertex_descriptor target (edge_descriptor, const Graph&) {
             // <your code>
@@ -211,11 +219,15 @@ class Graph {
 
         std::vector< std::set<vertex_descriptor> > v; // something like this
 
-		std::map<edge_descriptor, std::pair<vertex_descriptor, vertex_descriptor>> e1;  //key is the edge desciptor, the value is a pair of verticies
+	std::map<edge_descriptor, std::pair<vertex_descriptor, vertex_descriptor>> e1;  //key is the edge desciptor, the value is a pair of verticies
 		
         std::map<std::pair<vertex_descriptor, vertex_descriptor>, edge_descriptor> e2;
         
-		static unsigned int num_edges; 
+	static unsigned int num_edges; 
+
+	std::vector<edge_descriptor> ed;
+
+	std::vector<vertex_descriptor> vd;
 		
         // -----
         // valid
