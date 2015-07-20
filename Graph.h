@@ -31,7 +31,7 @@ class Graph {
 
         typedef unsigned int vertex_iterator;    // fix!
         typedef int* edge_iterator;      // fix!
-        typedef unsigned int* adjacency_iterator; // fix!
+        typedef std::set<vertex_descriptor>::iterator adjacency_iterator;
 
         typedef std::size_t vertices_size_type;
         typedef std::size_t edges_size_type;
@@ -84,7 +84,7 @@ class Graph {
 
 
             g.v.resize(g.v.size() + 1);
-            return g.v.size();
+            return g.v.size() - 1;
         }
 
         // -----------------
@@ -92,14 +92,12 @@ class Graph {
         // -----------------
 
         /**
-         * <your documentation>
+         * Get a pair of iterators 
          */
-        friend std::pair<adjacency_iterator, adjacency_iterator> adjacent_vertices (vertex_descriptor, const Graph&) {
-            // <your code>
-            static int a [] = {0, 0};     // dummy data
-            adjacency_iterator b = a;
-            adjacency_iterator e = a + 2;
-            return std::make_pair(b, e);}
+        friend std::pair<adjacency_iterator, adjacency_iterator> adjacent_vertices 
+                                                (vertex_descriptor u, const Graph& g) {
+            return std::make_pair(g.v[u].begin(), g.v[u].end());
+        }
 
         // ----
         // edge
@@ -108,7 +106,8 @@ class Graph {
         /**
          * <your documentation>
          */
-        friend std::pair<edge_descriptor, bool> edge (vertex_descriptor, vertex_descriptor, const Graph&) {
+        friend std::pair<edge_descriptor, bool> edge (vertex_descriptor u,
+                                            vertex_descriptor v, const Graph& g) {
             // <your code>
             edge_descriptor ed = 0;
             bool            b  = true;
@@ -136,7 +135,7 @@ class Graph {
          * Returns the number of edges in the graph
          */
         //friend edges_size_type num_edges (const Graph&) {
-        friend unsigned int num_edges (const Graph&) {
+        friend edges_size_type num_edges (const Graph&) {
 
 			//does this return int? should we change edges_size_type to int?
             //edges_size_type s = 1; // fix
