@@ -47,6 +47,8 @@ class Graph {
         friend std::pair<edge_descriptor, bool> add_edge (vertex_descriptor u, 
         												  vertex_descriptor v, 
         												  Graph& g) {
+
+			//Do we need to check if they try and add a edge where u == v?
             // <your code>
             vertex_size_type n = max(u, v) + 1;
             if (n > g.x.size())
@@ -75,6 +77,12 @@ class Graph {
          * @return a vertex_descriptor for the new vertex
          */
         friend vertex_descriptor add_vertex (Graph& g) {
+
+			// if they add a vertex, shouldnt it return a vertex descriptor of 
+			// g.v.size() - 1? since the index starts at 0. 
+			// for example v has 10 vertices, 0-9. adding one makes it 11, 0-10, we should reutrn the vertex descriptopr 10?
+
+
             g.v.resize(g.v.size() + 1);
             return g.v.size();
         }
@@ -125,12 +133,15 @@ class Graph {
         // ---------
 
         /**
-         * <your documentation>
+         * Returns the number of edges in the graph
          */
-        friend edges_size_type num_edges (const Graph&) {
-            // <your code>
-            edges_size_type s = 1; // fix
-            return s;}
+        //friend edges_size_type num_edges (const Graph&) {
+        friend unsigned int num_edges (const Graph&) {
+
+			//does this return int? should we change edges_size_type to int?
+            //edges_size_type s = 1; // fix
+
+            return num_edges;}
 
         // ------------
         // num_vertices
