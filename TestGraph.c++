@@ -52,10 +52,7 @@ typedef Types<
             boost::adjacency_list<boost::setS, boost::vecS, boost::directedS>,
             Graph>
         graph_types;
-/*
-typedef Types<boost::adjacency_list<boost::setS, boost::vecS, boost::directedS>>
-        graph_types;
-*/
+
 TYPED_TEST_CASE(TestGraph, graph_types);
 
 // --------
