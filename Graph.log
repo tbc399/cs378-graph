@@ -1,0 +1,144 @@
+commit ff13e864eca9329d81b4c2b2897973b2d851f00c
+Author: Travis Cammack <tbc399@cs.utexas.edu>
+Date:   Tue Jul 21 12:52:31 2015 -0500
+
+    updated TestGraph.out
+
+commit fef6a769821ab93642a19661667bf16cd2a48aa1
+Merge: 69f9bc1 52ef7d9
+Author: Travis Cammack <tbc399@cs.utexas.edu>
+Date:   Tue Jul 21 12:42:47 2015 -0500
+
+    Merge branch 'dev' of github.com:tbc399/cs378-graph into dev
+
+commit 69f9bc1b7a17c83972adef978c3f6e6ebcb6677f
+Author: Travis Cammack <tbc399@cs.utexas.edu>
+Date:   Tue Jul 21 12:40:55 2015 -0500
+
+    removed a comment from the tests
+
+commit 52ef7d9eb399a8e8115c56f94c46a1852e703b95
+Author: Travis Cammack <cammack@utexas.edu>
+Date:   Tue Jul 21 00:20:36 2015 -0500
+
+    tested our code against 2 more sets of unit tests: cgm694 and iv2366
+
+commit a127805e444a65f3c0e37eea4b8231bda1aa5259
+Author: Travis Cammack <tbc399@cs.utexas.edu>
+Date:   Mon Jul 20 20:48:53 2015 -0500
+
+    added the documentation via doxygen
+
+commit 60666ed11392144e8180ed489f75d36080bfe861
+Author: Travis Cammack <tbc399@cs.utexas.edu>
+Date:   Mon Jul 20 20:43:00 2015 -0500
+
+    close #11, close #12, close #13, close #14, close #15, close #16, close #17, close #18, close #19, close #20
+
+commit 557f07b9e6ab53e2442e72217bc1627478803448
+Author: Travis Cammack <tbc399@cs.utexas.edu>
+Date:   Mon Jul 20 20:40:29 2015 -0500
+
+    adding TestGraph.out
+
+commit c527cb38f0270cc60959867ff576da93faf0bba1
+Author: David Ko <davidko@cs.utexas.edu>
+Date:   Mon Jul 20 17:57:16 2015 -0500
+
+    Finished, passed all 82 tests. Need to add issues, and requirements
+
+commit c8e5baa978d08809d2de26100268061593938e30
+Author: David Ko <davidko@cs.utexas.edu>
+Date:   Mon Jul 20 14:54:17 2015 -0500
+
+    Finished some functions, question on soruce/target?
+
+commit d59733bd6b535fb348a2a7ab4103c7df07058d40
+Author: Travis Cammack <tbc399@cs.utexas.edu>
+Date:   Mon Jul 20 14:04:50 2015 -0500
+
+    implemented adjacent_vertices
+
+commit c1b5edb23fd992bd5c83075251e844b43b12fb8d
+Author: david ko <davidpeterko@gmail.com>
+Date:   Sun Jul 19 22:22:06 2015 -0500
+
+    added comments and did num_edges function. check comments on add_edge and add_vertex to see my thoughts.
+
+commit cbbb60e9e2978104b8b4188f1cdabae0a718fa2f
+Author: Travis Cammack <cammack@utexas.edu>
+Date:   Sat Jul 18 23:01:20 2015 -0500
+
+    implemented the add_edge function by adding a second map called that is basically a mirror of e1
+
+commit d17343f977d83b47a26fee5054007336a0e26dff
+Author: Travis Cammack <cammack@utexas.edu>
+Date:   Fri Jul 17 22:35:29 2015 -0500
+
+    implemented the add_vertex method
+
+commit 08a8b80b0e1c58cc3b04de8845240dc5934a4c72
+Author: David Ko <davidko@cs.utexas.edu>
+Date:   Fri Jul 17 20:53:13 2015 -0500
+
+    pondering on how to access the edgedescriptor to erturn the pair<ED, bool>
+
+commit cab187496961e95d82d804be4ba130b984351f26
+Author: Travis Cammack <tbc399@cs.utexas.edu>
+Date:   Fri Jul 17 20:23:37 2015 -0500
+
+    started implementing add_edge
+
+commit 3af526756aad0885f1d5d62b92b8f2962b4d7318
+Author: Travis Cammack <tbc399@cs.utexas.edu>
+Date:   Fri Jul 17 18:22:18 2015 -0500
+
+    added all the simple tests
+
+commit c7f088dff39305436b64bdbaf3aab9697e4a96bb
+Author: Travis Cammack <tbc399@cs.utexas.edu>
+Date:   Fri Jul 17 14:31:44 2015 -0500
+
+    added tests for adjacent_vertices, edge, and edges
+
+commit 251ce7ceb49e8740da85f535ae898f434a5955aa
+Author: Travis Cammack <cammack@utexas.edu>
+Date:   Fri Jul 17 12:36:41 2015 -0500
+
+    added tests for add_edge and add_vertex
+
+commit b53c9733e69ce0fdf53c06945f313d3bb5269bdd
+Author: Travis Cammack <cammack@utexas.edu>
+Date:   Thu Jul 16 20:09:25 2015 -0500
+
+    fixed issue with travis file
+
+commit 177cb0024aff9e766b040f727cf251d640104c5a
+Author: Travis Cammack <cammack@utexas.edu>
+Date:   Thu Jul 16 18:22:57 2015 -0500
+
+    added tests for add_edge
+
+commit 37acfbc5ebec73281f90a4c5125ceee267eaf1f5
+Author: Travis Cammack <cammack@utexas.edu>
+Date:   Thu Jul 16 17:37:10 2015 -0500
+
+    changed the makefile to suit the graph files
+
+commit 76af76f6bd7e83d4f4264961861df82d3488bec3
+Author: Travis Cammack <cammack@utexas.edu>
+Date:   Thu Jul 16 17:14:32 2015 -0500
+
+    added travis file makefile and gitignore
+
+commit 5d4f22a038277fc02e0633ab04e38b34125a0da3
+Author: Travis Cammack <cammack@utexas.edu>
+Date:   Thu Jul 16 15:52:58 2015 -0500
+
+    added the skeleton test functions
+
+commit c88c3ae527e21d5bb4cdeb430948e8e223594447
+Author: Travis Cammack <cammack@utexas.edu>
+Date:   Thu Jul 16 14:34:57 2015 -0500
+
+    initial commit
