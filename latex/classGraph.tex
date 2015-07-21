@@ -1,0 +1,330 @@
+\hypertarget{classGraph}{\section{Graph Class Reference}
+\label{classGraph}\index{Graph@{Graph}}
+}
+
+
+{\ttfamily \#include $<$Graph.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor}
+\item 
+typedef pair\\*
+$<$ \hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor}, \\*
+\hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor} $>$ \hyperlink{classGraph_ab641b227e6d3e56c3340cda156fc2bad}{edge\-\_\-descriptor}
+\item 
+typedef std\-::vector\\*
+$<$ \hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor} $>$\\*
+\-::const\-\_\-iterator \hyperlink{classGraph_aee10ac35c0bad19ebc93f33eb08e149d}{vertex\-\_\-iterator}
+\item 
+typedef std\-::set\\*
+$<$ \hyperlink{classGraph_ab641b227e6d3e56c3340cda156fc2bad}{edge\-\_\-descriptor} $>$\\*
+\-::const\-\_\-iterator \hyperlink{classGraph_a1082e7f0c0beefee6a7950e951a081f6}{edge\-\_\-iterator}
+\item 
+typedef std\-::set\\*
+$<$ \hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor} $>$\\*
+\-::const\-\_\-iterator \hyperlink{classGraph_ad03c07358f7be9768eba3825f75ded45}{adjacency\-\_\-iterator}
+\item 
+typedef std\-::size\-\_\-t \hyperlink{classGraph_ac1e19ecbf236d08dff611584e4c9403e}{vertices\-\_\-size\-\_\-type}
+\item 
+typedef std\-::size\-\_\-t \hyperlink{classGraph_a1924745b438f862ba9aa7cd0ff5b7da5}{edges\-\_\-size\-\_\-type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classGraph_ae4c72b8ac4d693c49800a4c7e273654f}{Graph} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classGraph_ab73ffdaeaaa43310e80b87f0c44c29e4}{valid} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ std\-::set\\*
+$<$ \hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor} $>$ $>$ \hyperlink{classGraph_aa9654a924fa25bf3ee9e05b088c294ec}{v}
+\item 
+std\-::set$<$ \hyperlink{classGraph_ab641b227e6d3e56c3340cda156fc2bad}{edge\-\_\-descriptor} $>$ \hyperlink{classGraph_abb33247bf7089b7364b2d81b7f79f5a3}{ed}
+\item 
+std\-::vector$<$ \hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor} $>$ \hyperlink{classGraph_ac93b6330606049e360a8344c30d7045a}{vd}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::pair$<$ \hyperlink{classGraph_ab641b227e6d3e56c3340cda156fc2bad}{edge\-\_\-descriptor}, bool $>$ \hyperlink{classGraph_a21aaff00ca2ef2f86932f4f4803adbd9}{add\-\_\-edge} (\hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor} u, \hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor} \hyperlink{classGraph_aa9654a924fa25bf3ee9e05b088c294ec}{v}, \hyperlink{classGraph}{Graph} \&g)
+\item 
+\hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor} \hyperlink{classGraph_a460812cc36de1f018d533425648cd957}{add\-\_\-vertex} (\hyperlink{classGraph}{Graph} \&g)
+\item 
+std\-::pair$<$ \hyperlink{classGraph_ad03c07358f7be9768eba3825f75ded45}{adjacency\-\_\-iterator}, \\*
+\hyperlink{classGraph_ad03c07358f7be9768eba3825f75ded45}{adjacency\-\_\-iterator} $>$ \hyperlink{classGraph_af41d11d36c2cb55b3603fd1a1417d1e2}{adjacent\-\_\-vertices} (\hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor} u, const \hyperlink{classGraph}{Graph} \&g)
+\item 
+std\-::pair$<$ \hyperlink{classGraph_ab641b227e6d3e56c3340cda156fc2bad}{edge\-\_\-descriptor}, bool $>$ \hyperlink{classGraph_ac71261875661196767a4727426720e87}{edge} (\hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor} u, \hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor} \hyperlink{classGraph_aa9654a924fa25bf3ee9e05b088c294ec}{v}, const \hyperlink{classGraph}{Graph} \&g)
+\item 
+std\-::pair$<$ \hyperlink{classGraph_a1082e7f0c0beefee6a7950e951a081f6}{edge\-\_\-iterator}, \\*
+\hyperlink{classGraph_a1082e7f0c0beefee6a7950e951a081f6}{edge\-\_\-iterator} $>$ \hyperlink{classGraph_a9d595e6a5ba50cc48612a97ebb08c423}{edges} (const \hyperlink{classGraph}{Graph} \&g)
+\item 
+\hyperlink{classGraph_a1924745b438f862ba9aa7cd0ff5b7da5}{edges\-\_\-size\-\_\-type} \hyperlink{classGraph_a8762ff8f5b09fea3fdcfb92c2648336e}{num\-\_\-edges} (const \hyperlink{classGraph}{Graph} \&g)
+\item 
+\hyperlink{classGraph_ac1e19ecbf236d08dff611584e4c9403e}{vertices\-\_\-size\-\_\-type} \hyperlink{classGraph_a58495c0a2630da064db06001bbee4b83}{num\-\_\-vertices} (const \hyperlink{classGraph}{Graph} \&g)
+\item 
+\hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor} \hyperlink{classGraph_aaf79fda6416b9938350acc8dc0e7eb3a}{source} (\hyperlink{classGraph_ab641b227e6d3e56c3340cda156fc2bad}{edge\-\_\-descriptor} e, const \hyperlink{classGraph}{Graph} \&g)
+\item 
+\hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor} \hyperlink{classGraph_a420cbf54b789866111b8a73634657623}{target} (\hyperlink{classGraph_ab641b227e6d3e56c3340cda156fc2bad}{edge\-\_\-descriptor} e, const \hyperlink{classGraph}{Graph} \&g)
+\item 
+\hyperlink{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{vertex\-\_\-descriptor} \hyperlink{classGraph_a1110c8a88b4ff021738a586020295ae2}{vertex} (\hyperlink{classGraph_ac1e19ecbf236d08dff611584e4c9403e}{vertices\-\_\-size\-\_\-type} n, const \hyperlink{classGraph}{Graph} \&g)
+\item 
+std\-::pair$<$ \hyperlink{classGraph_aee10ac35c0bad19ebc93f33eb08e149d}{vertex\-\_\-iterator}, \\*
+\hyperlink{classGraph_aee10ac35c0bad19ebc93f33eb08e149d}{vertex\-\_\-iterator} $>$ \hyperlink{classGraph_a8af8c02507f2320f17008c3d7e7a471c}{vertices} (const \hyperlink{classGraph}{Graph} \&g)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classGraph_ad03c07358f7be9768eba3825f75ded45}{\index{Graph@{Graph}!adjacency\-\_\-iterator@{adjacency\-\_\-iterator}}
+\index{adjacency\-\_\-iterator@{adjacency\-\_\-iterator}!Graph@{Graph}}
+\subsubsection[{adjacency\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::set$<${\bf vertex\-\_\-descriptor}$>$\-::const\-\_\-iterator {\bf Graph\-::adjacency\-\_\-iterator}}}\label{classGraph_ad03c07358f7be9768eba3825f75ded45}
+\hypertarget{classGraph_ab641b227e6d3e56c3340cda156fc2bad}{\index{Graph@{Graph}!edge\-\_\-descriptor@{edge\-\_\-descriptor}}
+\index{edge\-\_\-descriptor@{edge\-\_\-descriptor}!Graph@{Graph}}
+\subsubsection[{edge\-\_\-descriptor}]{\setlength{\rightskip}{0pt plus 5cm}typedef pair$<${\bf vertex\-\_\-descriptor}, {\bf vertex\-\_\-descriptor}$>$ {\bf Graph\-::edge\-\_\-descriptor}}}\label{classGraph_ab641b227e6d3e56c3340cda156fc2bad}
+\hypertarget{classGraph_a1082e7f0c0beefee6a7950e951a081f6}{\index{Graph@{Graph}!edge\-\_\-iterator@{edge\-\_\-iterator}}
+\index{edge\-\_\-iterator@{edge\-\_\-iterator}!Graph@{Graph}}
+\subsubsection[{edge\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::set$<${\bf edge\-\_\-descriptor}$>$\-::const\-\_\-iterator {\bf Graph\-::edge\-\_\-iterator}}}\label{classGraph_a1082e7f0c0beefee6a7950e951a081f6}
+\hypertarget{classGraph_a1924745b438f862ba9aa7cd0ff5b7da5}{\index{Graph@{Graph}!edges\-\_\-size\-\_\-type@{edges\-\_\-size\-\_\-type}}
+\index{edges\-\_\-size\-\_\-type@{edges\-\_\-size\-\_\-type}!Graph@{Graph}}
+\subsubsection[{edges\-\_\-size\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::size\-\_\-t {\bf Graph\-::edges\-\_\-size\-\_\-type}}}\label{classGraph_a1924745b438f862ba9aa7cd0ff5b7da5}
+\hypertarget{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}{\index{Graph@{Graph}!vertex\-\_\-descriptor@{vertex\-\_\-descriptor}}
+\index{vertex\-\_\-descriptor@{vertex\-\_\-descriptor}!Graph@{Graph}}
+\subsubsection[{vertex\-\_\-descriptor}]{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned int {\bf Graph\-::vertex\-\_\-descriptor}}}\label{classGraph_a9b97d75f995b7c1cb0b5760690bef3ba}
+\hypertarget{classGraph_aee10ac35c0bad19ebc93f33eb08e149d}{\index{Graph@{Graph}!vertex\-\_\-iterator@{vertex\-\_\-iterator}}
+\index{vertex\-\_\-iterator@{vertex\-\_\-iterator}!Graph@{Graph}}
+\subsubsection[{vertex\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::vector$<${\bf vertex\-\_\-descriptor}$>$\-::const\-\_\-iterator {\bf Graph\-::vertex\-\_\-iterator}}}\label{classGraph_aee10ac35c0bad19ebc93f33eb08e149d}
+\hypertarget{classGraph_ac1e19ecbf236d08dff611584e4c9403e}{\index{Graph@{Graph}!vertices\-\_\-size\-\_\-type@{vertices\-\_\-size\-\_\-type}}
+\index{vertices\-\_\-size\-\_\-type@{vertices\-\_\-size\-\_\-type}!Graph@{Graph}}
+\subsubsection[{vertices\-\_\-size\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::size\-\_\-t {\bf Graph\-::vertices\-\_\-size\-\_\-type}}}\label{classGraph_ac1e19ecbf236d08dff611584e4c9403e}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classGraph_ae4c72b8ac4d693c49800a4c7e273654f}{\index{Graph@{Graph}!Graph@{Graph}}
+\index{Graph@{Graph}!Graph@{Graph}}
+\subsubsection[{Graph}]{\setlength{\rightskip}{0pt plus 5cm}Graph\-::\-Graph (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classGraph_ae4c72b8ac4d693c49800a4c7e273654f}
+Construct an empty adjacency list graph 
+
+\subsection{Member Function Documentation}
+\hypertarget{classGraph_ab73ffdaeaaa43310e80b87f0c44c29e4}{\index{Graph@{Graph}!valid@{valid}}
+\index{valid@{valid}!Graph@{Graph}}
+\subsubsection[{valid}]{\setlength{\rightskip}{0pt plus 5cm}bool Graph\-::valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}}\label{classGraph_ab73ffdaeaaa43310e80b87f0c44c29e4}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classGraph_a21aaff00ca2ef2f86932f4f4803adbd9}{\index{Graph@{Graph}!add\-\_\-edge@{add\-\_\-edge}}
+\index{add\-\_\-edge@{add\-\_\-edge}!Graph@{Graph}}
+\subsubsection[{add\-\_\-edge}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<${\bf edge\-\_\-descriptor}, bool$>$ add\-\_\-edge (
+\begin{DoxyParamCaption}
+\item[{{\bf vertex\-\_\-descriptor}}]{u, }
+\item[{{\bf vertex\-\_\-descriptor}}]{v, }
+\item[{{\bf Graph} \&}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classGraph_a21aaff00ca2ef2f86932f4f4803adbd9}
+Adds an edge, from u -\/$>$ v, and increases the size 
+\begin{DoxyParams}{Parameters}
+{\em u} & the source vertex \\
+\hline
+{\em v} & the target vertex \\
+\hline
+{\em g} & a graph to act on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pair with an edge-\/descriptor and a bool to represent if the edge already exists 
+\end{DoxyReturn}
+\hypertarget{classGraph_a460812cc36de1f018d533425648cd957}{\index{Graph@{Graph}!add\-\_\-vertex@{add\-\_\-vertex}}
+\index{add\-\_\-vertex@{add\-\_\-vertex}!Graph@{Graph}}
+\subsubsection[{add\-\_\-vertex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vertex\-\_\-descriptor} add\-\_\-vertex (
+\begin{DoxyParamCaption}
+\item[{{\bf Graph} \&}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classGraph_a460812cc36de1f018d533425648cd957}
+Add a new single vertex to this \hyperlink{classGraph}{Graph} 
+\begin{DoxyParams}{Parameters}
+{\em g} & the \hyperlink{classGraph}{Graph} to add the vertex to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vertex\-\_\-descriptor for the new vertex 
+\end{DoxyReturn}
+\hypertarget{classGraph_af41d11d36c2cb55b3603fd1a1417d1e2}{\index{Graph@{Graph}!adjacent\-\_\-vertices@{adjacent\-\_\-vertices}}
+\index{adjacent\-\_\-vertices@{adjacent\-\_\-vertices}!Graph@{Graph}}
+\subsubsection[{adjacent\-\_\-vertices}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<${\bf adjacency\-\_\-iterator}, {\bf adjacency\-\_\-iterator}$>$ adjacent\-\_\-vertices (
+\begin{DoxyParamCaption}
+\item[{{\bf vertex\-\_\-descriptor}}]{u, }
+\item[{const {\bf Graph} \&}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classGraph_af41d11d36c2cb55b3603fd1a1417d1e2}
+Get a pair of adjacency\-\_\-iterator to the beginning and end of the set of vertices that are adjacent to a specified vertex 
+\begin{DoxyParams}{Parameters}
+{\em u} & a vertex \\
+\hline
+{\em g} & a graph to act on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pair with an adjacency\-\_\-iterator to the beginning of the adjacent vertices to u and one to the end of the adjacent vertices 
+\end{DoxyReturn}
+\hypertarget{classGraph_ac71261875661196767a4727426720e87}{\index{Graph@{Graph}!edge@{edge}}
+\index{edge@{edge}!Graph@{Graph}}
+\subsubsection[{edge}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<${\bf edge\-\_\-descriptor}, bool$>$ edge (
+\begin{DoxyParamCaption}
+\item[{{\bf vertex\-\_\-descriptor}}]{u, }
+\item[{{\bf vertex\-\_\-descriptor}}]{v, }
+\item[{const {\bf Graph} \&}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classGraph_ac71261875661196767a4727426720e87}
+Searches for an edge within our map and returns a pair with that edge descriptor and a bool, returns 0,false if not there 
+\begin{DoxyParams}{Parameters}
+{\em u} & a source vertex \\
+\hline
+{\em v} & a target vertex \\
+\hline
+{\em g} & a graph to act on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pair with an edge\-\_\-descriptor and a bool to represent if the edge already exists 
+\end{DoxyReturn}
+\hypertarget{classGraph_a9d595e6a5ba50cc48612a97ebb08c423}{\index{Graph@{Graph}!edges@{edges}}
+\index{edges@{edges}!Graph@{Graph}}
+\subsubsection[{edges}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<${\bf edge\-\_\-iterator}, {\bf edge\-\_\-iterator}$>$ edges (
+\begin{DoxyParamCaption}
+\item[{const {\bf Graph} \&}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classGraph_a9d595e6a5ba50cc48612a97ebb08c423}
+Get a pair of iterators (beginning and end) of our edges tracker 
+\begin{DoxyParams}{Parameters}
+{\em g} & a graph to act on return a pair with an edge\-\_\-iterator to the beginning of the set of edges in g and one to the end of the set of edges \\
+\hline
+\end{DoxyParams}
+\hypertarget{classGraph_a8762ff8f5b09fea3fdcfb92c2648336e}{\index{Graph@{Graph}!num\-\_\-edges@{num\-\_\-edges}}
+\index{num\-\_\-edges@{num\-\_\-edges}!Graph@{Graph}}
+\subsubsection[{num\-\_\-edges}]{\setlength{\rightskip}{0pt plus 5cm}{\bf edges\-\_\-size\-\_\-type} num\-\_\-edges (
+\begin{DoxyParamCaption}
+\item[{const {\bf Graph} \&}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classGraph_a8762ff8f5b09fea3fdcfb92c2648336e}
+Get the number of edges in the graph 
+\begin{DoxyParams}{Parameters}
+{\em g} & a graph to act on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of edges in the graph g 
+\end{DoxyReturn}
+\hypertarget{classGraph_a58495c0a2630da064db06001bbee4b83}{\index{Graph@{Graph}!num\-\_\-vertices@{num\-\_\-vertices}}
+\index{num\-\_\-vertices@{num\-\_\-vertices}!Graph@{Graph}}
+\subsubsection[{num\-\_\-vertices}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vertices\-\_\-size\-\_\-type} num\-\_\-vertices (
+\begin{DoxyParamCaption}
+\item[{const {\bf Graph} \&}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classGraph_a58495c0a2630da064db06001bbee4b83}
+Get the number of vertices in the graph 
+\begin{DoxyParams}{Parameters}
+{\em g} & a graph to act on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of vertices in the graph g 
+\end{DoxyReturn}
+\hypertarget{classGraph_aaf79fda6416b9938350acc8dc0e7eb3a}{\index{Graph@{Graph}!source@{source}}
+\index{source@{source}!Graph@{Graph}}
+\subsubsection[{source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vertex\-\_\-descriptor} source (
+\begin{DoxyParamCaption}
+\item[{{\bf edge\-\_\-descriptor}}]{e, }
+\item[{const {\bf Graph} \&}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classGraph_aaf79fda6416b9938350acc8dc0e7eb3a}
+Get the source of a specified edge 
+\begin{DoxyParams}{Parameters}
+{\em e} & an edge\-\_\-descriptor \\
+\hline
+{\em g} & a graph to act on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vertex\-\_\-descriptor to the source of e 
+\end{DoxyReturn}
+\hypertarget{classGraph_a420cbf54b789866111b8a73634657623}{\index{Graph@{Graph}!target@{target}}
+\index{target@{target}!Graph@{Graph}}
+\subsubsection[{target}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vertex\-\_\-descriptor} target (
+\begin{DoxyParamCaption}
+\item[{{\bf edge\-\_\-descriptor}}]{e, }
+\item[{const {\bf Graph} \&}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classGraph_a420cbf54b789866111b8a73634657623}
+Get the target of a specified edge 
+\begin{DoxyParams}{Parameters}
+{\em e} & an edge\-\_\-descriptor \\
+\hline
+{\em g} & a graph to act on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vertex\-\_\-descriptor to the target of e 
+\end{DoxyReturn}
+\hypertarget{classGraph_a1110c8a88b4ff021738a586020295ae2}{\index{Graph@{Graph}!vertex@{vertex}}
+\index{vertex@{vertex}!Graph@{Graph}}
+\subsubsection[{vertex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vertex\-\_\-descriptor} vertex (
+\begin{DoxyParamCaption}
+\item[{{\bf vertices\-\_\-size\-\_\-type}}]{n, }
+\item[{const {\bf Graph} \&}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classGraph_a1110c8a88b4ff021738a586020295ae2}
+Get the vertex at the nth place in the vertices of the graph 
+\begin{DoxyParams}{Parameters}
+{\em n} & a vertices\-\_\-size\-\_\-type \\
+\hline
+{\em g} & a graph to act on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vertex\-\_\-descriptor of the nth vertex in the graph g 
+\end{DoxyReturn}
+\hypertarget{classGraph_a8af8c02507f2320f17008c3d7e7a471c}{\index{Graph@{Graph}!vertices@{vertices}}
+\index{vertices@{vertices}!Graph@{Graph}}
+\subsubsection[{vertices}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<${\bf vertex\-\_\-iterator}, {\bf vertex\-\_\-iterator}$>$ vertices (
+\begin{DoxyParamCaption}
+\item[{const {\bf Graph} \&}]{g}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classGraph_a8af8c02507f2320f17008c3d7e7a471c}
+Returns a pair of vertex\-\_\-iterator to the beginning and end of the set of vertices in a graph 
+\begin{DoxyParams}{Parameters}
+{\em g} & a graph to act on \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pair with a vertex\-\_\-iterator to the beginning of the vertices in the graph g and one to the end of the vertices in the graph g 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classGraph_abb33247bf7089b7364b2d81b7f79f5a3}{\index{Graph@{Graph}!ed@{ed}}
+\index{ed@{ed}!Graph@{Graph}}
+\subsubsection[{ed}]{\setlength{\rightskip}{0pt plus 5cm}std\-::set$<${\bf edge\-\_\-descriptor}$>$ Graph\-::ed\hspace{0.3cm}{\ttfamily [private]}}}\label{classGraph_abb33247bf7089b7364b2d81b7f79f5a3}
+\hypertarget{classGraph_aa9654a924fa25bf3ee9e05b088c294ec}{\index{Graph@{Graph}!v@{v}}
+\index{v@{v}!Graph@{Graph}}
+\subsubsection[{v}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::set$<${\bf vertex\-\_\-descriptor}$>$ $>$ Graph\-::v\hspace{0.3cm}{\ttfamily [private]}}}\label{classGraph_aa9654a924fa25bf3ee9e05b088c294ec}
+\hypertarget{classGraph_ac93b6330606049e360a8344c30d7045a}{\index{Graph@{Graph}!vd@{vd}}
+\index{vd@{vd}!Graph@{Graph}}
+\subsubsection[{vd}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf vertex\-\_\-descriptor}$>$ Graph\-::vd\hspace{0.3cm}{\ttfamily [private]}}}\label{classGraph_ac93b6330606049e360a8344c30d7045a}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{Graph_8h}{Graph.\-h}\end{DoxyCompactItemize}
